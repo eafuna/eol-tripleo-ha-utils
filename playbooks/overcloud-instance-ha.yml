@@ -1,0 +1,10 @@
+---
+- name: Gather undercloud and overcloud facts
+  hosts: undercloud overcloud
+  gather_facts: yes
+
+- name: Configure Instance HA
+  hosts: undercloud
+  gather_facts: no
+  roles:
+    - instance-ha
